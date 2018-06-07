@@ -8,9 +8,20 @@
 </body>
 </html>
 <link href="./commont_css/select.css" rel="stylesheet" type="text/css" />
-<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://mockjs.com/dist/mock.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="./commont_js/Select_Commont.js"></script>
-<script type="text/javascript">''
+<script type="text/javascript">
+	/* -2--模拟产生数据--测试使用 */
+	var data = Mock.mock({
+		"dataSelect|3000": [
+		"Hello",
+		"Mock.js",
+		"!"
+		]
+	});
+	console.log(data);
+
 	var mySelect = new newSelect(['nice','go','go1','go2','nice','go','go1','go2'],'select','./dataSelect.json');
-	mySelect.myAlert();
+	//mySelect.myAlert();
 </script>

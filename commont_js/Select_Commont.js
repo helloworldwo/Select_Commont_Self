@@ -51,9 +51,8 @@
                 type: "get",
                 url: dataUrl,
                 dataType : "jsonp",//jsonp数据类型 
-                
                 success: function (data) {
-                let tempArr = data[getSelectData];
+                let tempArr = data['getSelectData'];
                 for (i = 0; i < tempArr.length; i++) {
                         let li = document.createElement("li");
                         li.innerHTML = tempArr[i];
@@ -71,8 +70,6 @@
         /* 功能性加载 */
         selectLoad:function(){
             this.loadAsycData(this.dataUrl);
-           
-
 
         /* 绑定点击事件 */
         $('#arrow_right').click(function(e){
