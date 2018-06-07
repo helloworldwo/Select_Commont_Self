@@ -4,24 +4,66 @@
 	<title></title>
 </head>
 <body>
-	<div id="select"></div>
+	<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">模拟Select组件</h3>
+    </div>
+    <div class="panel-body">
+
+		<div id="lable_select">
+				<p>1、基本功能同select元素，可以下拉选择</p>
+				<p>2、支持直接输入，输入时下拉列表的选项自动前缀匹配，匹配到的前缀用红色文字展示</p>
+				<p>3、支持异步加载数据</p>
+				<p>4、兼容主流浏览器</p>
+				<p>5、通过Mock来模拟生成数据，测试组件功能</p>
+		</div>
+    </div>
+</div>
+<span class="label label-primary">模拟select组件展示如下:</span>
+<div id="select"></div>
 </body>
 </html>
 <link href="./commont_css/select.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="mock.js"></script>
 <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="./commont_js/Select_Commont.js"></script>
 <script type="text/javascript">
 	/* -2--模拟产生数据--测试使用 */
-	var data = Mock.mock({
-		"dataSelect|3000": [
+	let myData;
+	myData = Mock.mock({
+		"dataSelect|30": [
 		"Hello",
 		"Mock.js",
-		"!"
+		"MosckJs",
+		"Scratch",
+		"javascript",
+		"It",
+		"Css",
+		"HTML"
 		]
-	});
-	console.log(data);
+	});  
 
-	var mySelect = new newSelect(['nice','go','go1','go2','nice','go','go1','go2'],'select','https://github.com/helloworldwo/Select_Commont_Self/blob/master/dataSelect.json');
-	//mySelect.myAlert();
+	var mySelect = new newSelect(myData.dataSelect,'select','');
 </script>
+<style type="text/css" scoped>
+	#select{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top:30px;
+		margin-bottom: 30px;
+		width:fit-content;
+	}
+
+	.label{
+		display: inline-block;
+	}
+
+	#lable_select{
+	}
+
+	#lable_select ul li{
+		text-align:left;
+		list-style-type:none;
+	}
+</style>
